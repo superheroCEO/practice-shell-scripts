@@ -3,16 +3,37 @@
 # aws-datapipeline-dependencies.sh by Juan Antonio, jantonio@medium.com, 2016
 # This script clears out WAITING FOR DEPENDENCIES for AWS Datapiplines
 
-usage() { echo "Usage: $0 [--region <aws region>] [--help]" 1>&2; exit 1; }
+usage() { echo "Usage: $0 [-r <aws region>] [-h]" 1>&2; exit 1; }
 
-BAD="FINISHED WAITING_ON_DEPENDENCIES FINISHED FAILED"
+while getopts ":hr:" arg ;do
+  case $arg in
+    h) # Display help
+      	usage
+      	exit 0
+      	;;
+    r)
+	region=${OPTARG}
+	;;
+    *)
+	usage
+	;;
+  esac
+done
+shift $((OPTIND-1))
+
+if [ -z "${r}" ]; then
+    usage
+fi
+
+BAD = "FINISHED WAITING_ON_DEPENDENCIES FINISHED FAILED"
 yesterday=$(date -v -1d +%Y-%m-%d)
 otherday=$(date -v -2d +%Y-%m-%d)
 exit_code=0
-region="us-east-1"
-
-for pipeline in $(aws --region=${region} datapipeline list-pipelines --query 'pipelineIdList[].id' \
-                  | grep df | awk -F \" '{print $2}' ); do
+region=$region
+pipelines=$(aws --region=${region} datapipeline list-pipelines --query 'pipelineIdList[].id' \
+                  | grep df | awk -F \" '{print $2}')
+      
+for pipeline in $pipelines; do
 output=$(aws --region=${region} datapipeline list-runs --pipeline-id ${pipeline} \
             --start-interval ${otherday},${yesterday}  \
           | grep -E 'FINISHED|WAITING_ON_DEPENDENCIES|FAILED' | awk '{print $NF}'| xargs)
@@ -25,3 +46,4 @@ output=$(aws --region=${region} datapipeline list-runs --pipeline-id ${pipeline}
 done
       
 exit ${exit_code}
+
