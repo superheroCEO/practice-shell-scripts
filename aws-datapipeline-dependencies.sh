@@ -1,5 +1,9 @@
 #!/bin/bash
+
+# aws-datapipeline-dependencies.sh by Juan Antonio, jantonio@medium.com, 2016
 # This script clears out WAITING FOR DEPENDENCIES for AWS Datapiplines
+
+usage() { echo "Usage: $0 [--region <aws region>] [--help]" 1>&2; exit 1; }
 
 BAD="FINISHED WAITING_ON_DEPENDENCIES FINISHED FAILED"
 yesterday=$(date -v -1d +%Y-%m-%d)
