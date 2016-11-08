@@ -1,0 +1,5 @@
+echo "born in 1989"
+echo "5'10.5"
+echo "release 5 offiial albums"
+echo "is more than a pop princess"
+echo "is abs. gorgeous"

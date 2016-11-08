@@ -1,0 +1,8 @@
+This line you're reading is being sent to errors.txt l
+And this line is being added to errors.txt
+-bash: nothing: command not found
+-bash: somethign: command not found
+-bash: taylor: command not found
+-bash: swiftie: command not found
+-bash: jabrony: command not found
+-bash: jammy: command not found

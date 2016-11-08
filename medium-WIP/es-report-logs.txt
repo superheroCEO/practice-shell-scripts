@@ -1,0 +1,88 @@
+1) the situation:
+@juan_antonio would you be up for taking my action from the watch to create a job on the production pasar instance to run "/media/ephemeral0/repos/posadero/scripts/check_if_hosts_report_logs_to_es.py",
+	-->  parse out the reported logging rate from it
+	-->  and send it to datadog?
+
+2) looking at the script I think you may want to:
+	--->  change how it reports success and failure.  
+
+3) .py code file reviewed 
+
+4) part of code referencing:
+
+
+if rate < threshold:
+    print dns
+    print es
+    print "Delta", dns - es
+    sys.exit(1)
+  else:
+    print "Enough hosts reported logs. (rate: %f)" % rate
+
+5) Nat wrote .py script
+
+6) rate < threshold,  0--->1; ie 0.5 = 50% 
+printing   a) "enough host reported logs  (rate: %f)" % rate  [current]
+       b)  "not enough hosts..." 
+7) Datadog connect ?
+
+8) git new branch of file
+
+---> code pair w/Nat
+
+-script compares two diff IP's from DNS & Elastic Search...
+
+-- so now, 
+   (1) clone script   cp  ...give new name
+   (2) delete DNS part of Python script
+   (3) look at DataDog Python API
+   (4) create a new metric for DataDog host-reporting logs
+   (5) ...create Jenkins Job (?)  
+
+
+
+--> 		{{{ JA two cents on DDog portion }}}
+
+DD_API_KEY_CONFIG=/var/tmp/deployment-config/worlds/medium-com/datadog.apiKey
+DD_APP_KEY_CONFIG=/var/tmp/deployment-config/worlds/medium-com/datadog.appKey
+
+RESULT=$(curl -L http://medium-back.main.us-east-1.medm.io/_/admin/monitoring-event);
+SUCCESS=$(echo "${RESULT}" | \
+  grep '"success":true' | \
+  wc -l)
+echo SUCCESS: ${SUCCESS}
+
+/usr/local/bin/dog --api-key=$(cat ${DD_API_KEY_CONFIG}) \
+				   --application-key=$(cat ${DD_APP_KEY_CONFIG}) \
+                   metric post medium-back.NEW_HOST_REPORTING_LOGS ${SUCCESS} || true
+
+if [ "${SUCCESS}" -eq 0 ]
+then
+  exit 1
+fi
+
+
+/\/\/\/\
+
+====> Nat 4point plan:
+1)  duplicate script   [cp  done]; git checkout -b ja-new-branch
+2)  remove all DNS related code  [ halfway done]
+3)  change output to display  "elk.server.count.###variable"
+~~~~> DDog ref 	'server.count @ metrics' (see what those metrics are all about)
+~~~~> search events 'server.count..."  as ref.  {{ ?? }}
+~~>  JSON file 
+
+{
+  "count": [
+    {
+      "a": "avg:server.count.###variable.as_count()",
+      "type: "xxx",  "lines", vs  "bars",
+      "conditional_formats": []
+    }
+  ],
+# "viz": "timeseries"
+}
+4)  DataDog integration
+
+--script not comparing; just outputing 
+
