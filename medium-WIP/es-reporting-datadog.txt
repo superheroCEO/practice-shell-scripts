@@ -1,0 +1,51 @@
+create a new metric for DataDog host-reporting logs
+
+from datadog import initialize, api
+
+import os
+api_key = os.environ.get("DATADOG_API_KEY")
+
+from datadog import statsd
+
+statsd.count('ES reporting hosts', 88)
+statsd.gauge('ES reporting hosts', 100, sample_rate=0.5, tags=["protocol:http"])
+
+# gauge(metric, value, tags=None, sample_rate=1)
+# Record the value of a gauge, optionally setting a list of tags and a sample rate.
+
+
+
+-->     {{{ JA two cents on DDog portion }}}
+
+DD_API_KEY_CONFIG=/var/tmp/deployment-config/worlds/medium-com/datadog.apiKey
+DD_APP_KEY_CONFIG=/var/tmp/deployment-config/worlds/medium-com/datadog.appKey
+
+RESULT=$(curl -L http://medium-back.main.us-east-1.medm.io/_/admin/es-reporting-hosts);
+SUCCESS=$(echo "${RESULT}" | \
+  grep '"success":true' | \
+  wc -l)
+echo SUCCESS: ${SUCCESS}
+
+/usr/local/bin/dog --api-key=$(cat ${DD_API_KEY_CONFIG}) \
+           --application-key=$(cat ${DD_APP_KEY_CONFIG}) \
+                   metric post medium-back.ES_REPORTING_HOSTS ${SUCCESS} || true
+
+if [ "${SUCCESS}" -eq 0 ]
+then
+  exit 1
+fi
+
+
+~~>  JSON file
+
+{
+  "count": [
+    {
+      "a": "avg:server.count.###variable.as_count()",
+      "type: "xxx",  "lines", vs  "bars",
+      "conditional_formats": []
+    }
+  ],
+# "viz": "timeseries"
+}
+
