@@ -1,0 +1,17 @@
+-rw-r--r--   1 juanantonio  staff     0 Nov 20 19:20 testfile2
+-rw-r--r--   1 juanantonio  staff   124 Nov 20 18:43 testfile1
+-rwxr-xr-x   1 juanantonio  staff    65 Nov 20 18:48 tay_facts.txt
+-rwxr-xr-x   1 juanantonio  staff   228 Nov 20 18:27 ch11-command_sub.sh
+-rwxr-xr-x   1 juanantonio  staff   230 Nov 20 19:08 ch11-inline_input_redir.sh
+-rwxr-xr-x   1 juanantonio  staff   262 Nov 20 19:20 ch11-piping2.sh
+-rwxr-xr-x   1 juanantonio  staff   286 Nov 20 18:21 ch11-user_var2.sh
+-rwxr-xr-x   1 juanantonio  staff   304 Nov 20 18:15 user_var.sh
+-rwxr-xr-x   1 juanantonio  staff   354 Nov 20 18:37 ch11-output_redirection.sh
+-rwxr-xr-x   1 juanantonio  staff   362 Nov 20 17:58 date_who.sh
+-rwxr-xr-x   1 juanantonio  staff   542 Nov 20 19:16 ch11-piping.sh
+-rwxr-xr-x   1 juanantonio  staff   598 Nov 20 18:10 env_var.sh
+-rwxr-xr-x   1 juanantonio  staff   622 Nov 20 18:46 ch11-input_redirection.sh
+drwxr-xr-x  15 juanantonio  staff   510 Nov 20 19:20 .
+drwxr-xr-x  70 juanantonio  staff  2380 Nov 20 17:45 ..
+total 96
+Taylor Swift. All I would ever need
