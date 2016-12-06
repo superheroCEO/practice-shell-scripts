@@ -1,0 +1,29 @@
+recall: the if statement line is just a normal shell command
+
+Q: Does Bash  if-then  statement have the ability to evalute any condition otehr than a command's exit status code?
+
+
+A:	NO
+
+
+Enter the  test  command. 
+
+test command provides way to test different conditions in an  if-then  statement. 
+
+IF the condition listed in the  test  command evaluates to TRUE, the  test cmd  EXITS WITH A 0 EXIT STATUS CODE.
+
+IF the condition listed in the  test  cmd evalutes to FALSE, the  test  cmd exits w/a NON-ZERO EXIT STATUS CODE  ("1" for simplicty) ==> causes the  if-then  statement to exit.
+
+format:		test CONDITION
+
+- condition is a series of parameters & values that the  test  cmd evaluates. Looks like this:
+
+
+if test CONDITION
+then
+  command(s)
+fi
+
+
+- if you leave out the condition portion of  test  cmd statement, it exitsw/a NON-ZERO EXIT STATUS CODE & triggers any ELSE block statement(s).
+

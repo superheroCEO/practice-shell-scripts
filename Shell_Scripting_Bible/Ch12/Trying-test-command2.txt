@@ -1,0 +1,18 @@
+Bash shell provides alt way of testing a condition w/o declaring the test command in an  if-then  statement:
+
+if [ condition ]
+then
+  command(s)
+else
+  commnad(s)
+fi
+
+
+the SQUARE BRACKETS define the test condition. 
+
+NOTE: you MUST have a SPACE AFTER the FIRST bracket AND a space BEFORE the last bracket or you'll get an error.
+
+The test cmd & test conditions can evaluate (3) classes of conditions
+- Numeric comparisons
+- String comparisons
+- File comparisons
