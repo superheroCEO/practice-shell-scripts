@@ -1,0 +1,11 @@
+Test conditions DO allow you perform comparisons on string values, but it can get tricky, so be fucking careful. Look at this table:
+
+Comparison		Description
+str1 = str2		checks IF str1 is THE SAME AS str2
+str1 != str2		checks IF str1 is NOT THE SAME AS str2
+str1 < str2		checks IF str1 is LESS THAN str2
+str1 > str2		checks IF str1 is GREATER THAN str2
+-n str1			checks IF str1 has a LENGTH greater than 0
+-z str1			checks IF str1 has A LENGHT OF 0 [ is it 0?]
+
+keep in mind, using the NOT EQUALS str comparison (!=) allows you to deteremine IF 2 strings have the same value or not
