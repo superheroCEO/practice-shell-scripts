@@ -1,0 +1,10 @@
+Let's look at string order...
+- trying to determine IF 1 str is < or > another str is where things start getting TRICKY. Two problems when trying to use < or > features in test conditions:
+  1) > & < symbols MUST BE ESCAPED or the shell will use them as REDIRECTION symbols, w/the str values as filenames
+  ==> to escape >, you go:  "\>"  or "\<" (but w/o the quotes mofo) 
+  2) the > & < order is NOT the same as that used with the SORT cmd
+
+--> just remember, > or <  MUST, BE, ESCAPED " \ " --> remember to PROPERLY ESCAPE
+
+also, the SORT cmd handles uppercasse letters OPPOSITE to how test conditions consider them: ***CAPITALIZED LETTERS are treated as LESS THAN lowercase letters in test comparisons***
+sort ==> lowercase letters appear first

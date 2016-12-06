@@ -1,0 +1,11 @@
+*most common TEST EVALUATION METHOD is to perform a comparison of 2 numeric values:
+
+COMPARISON		DESCRIPTION
+n1 -eq n2		checks IF n1 is EQUAL TO n2
+n1 -ge n2		checks IF n2 is greater than OR equal to n2
+n1 -gt n2		checks IF n1 is greater than n2
+n1 -le n2		checks IF n1 is less than OR equal to n2
+n1 -lt n2		checks IF n1 is less than n2
+n1 -ne n2 		checks if n1 is NOT EQUAL to n2
+
+numeric test conditions can be used to evalute BOTH numbers and variables
