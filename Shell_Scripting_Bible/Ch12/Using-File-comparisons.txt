@@ -1,0 +1,18 @@
+File comparison are the MOST POWERFUL & mosed used comparisons in shell scripting.
+This category allows you to test the STATUS of files & dir on the filesystem. These are the comparisons:
+
+COMPARISON		DESCRIPTION
+-d file			checks IF file exists AND is a DIRECTORY
+-e file			checks IF file exists
+-f file			checks IF file exists AND is a FILE
+-r file			checks IF file exists AND is READABLE
+-s file			checks IF file exists AND is NOT EMPTY
+-w file			checks IF file exists AND is WRITABLE
+-x file			checks IF file exists AND is EXECUTABLE
+-O file			checks IF file exists AND is OWNED by current user
+-G file			checks IF file exists AND is if default grp same as current user
+
+file1 -nt file2		checks IF file1 is NEWER THAN file2
+file1 -ot file2		checks IF file1 is OLDER THAN file2
+
+--> these conditions give you the ability to check filesys. files w/i shell scripts; often used in scripts that ACCESS FILES.
