@@ -36,4 +36,4 @@ else
   echo "Hasta la vista baby"
 fi
 echo $?
-
+  echo "Just remember that the -e comparison works for BOTH files & directories"
