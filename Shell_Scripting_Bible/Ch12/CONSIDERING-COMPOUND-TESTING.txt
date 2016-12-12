@@ -1,0 +1,14 @@
+The if-then statement allows you to use BOOLEAN LOGIC to COMBINE tests. You can use these two Boolean operators:
+
+  [ condition1 ] && [ condition2 ] 
+  
+  [ condition1 ] || [ condition2 ]
+
+
+The first Boolean operation uses the AND Boolean operator to COMBINE TWO CONDITIONS. BOTH CONDITIONS MUST BE MET
+for the then section to execute.
+
+**Note: Boolean logic is a method that reduces the potential returned values to be either TRUE or FALSE **
+
+The second Boolean operation uses the OR Boolean operator to COMBINE TWO CONDITIONS. If EITHER condition evalutes
+to a TRUE condition, the then section is executed.
