@@ -1,0 +1,30 @@
+Two additions to Bash shell provide advanced features taht you can use in if-then statements:
+	1) double parentheses for mathematical expressions (( double ))
+	2) double square brackets for adv. string handling fxnss [[ double ]] 
+
+Using double parentheses
+
+- double parentheses command allows you to incorporate adv. mathematical formulas in your comparisons.
+- test cmd allows for ONLY SIMPLE arithmetic operations in comparisons
+- the format:
+	(( expreession )) 
+==> the expression term can be ANY mathematical assignment OR comparison expression
+
+DOUBLE PARENTHESIS COMMAND SYMBOLS
+
+Symbol		Description
+val++		post-increment
+val--		post-decrement
+++val		pre-increment
+--val		pre-decrement
+!		logical negation
+~		bitwise negation
+**		exponentiation
+<<		Left bitwise shift
+>>		Right bitwise shift
+&		Bitwise Boolean AND
+| 		Bitwise Boolean OR
+&& 		Logical AND
+||		Logical OR
+
+You can use the double parenthesis command in an if statement, as well as in a normal command in a the script for assigning values. 
