@@ -1,0 +1,11 @@
+Ch12 was about MANIPULATING THE FLOW OF A SHELL SCRIPT PROGRAM by checking the output of commands && the values of variables
+
+In ch13, we'll look at more STRUCTURED COMMANDS; specifically, how you can perform REPEATING PROCESS commands that can loop through
+a set of cmds until an indicated CONDITION has been met. 
+
+We'll look at:
+    for
+    while
+    until
+  
+looping commands!
