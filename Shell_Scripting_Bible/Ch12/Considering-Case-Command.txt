@@ -1,0 +1,23 @@
+Often you'll find yourself trying to eval. a var's value, looking for a spec. value w/i a set of possible values.
+
+The  elif  statements continue the if-then chekcing, LOOKING FOR A SPECIFIC VALUE for the single comparison variable.
+
+INSTEAD of having to write all the  elif  statements to continue CHECKING THE SAME VARIABLE VALUE, you can:
+  use the   case  command 
+
+The  case  command checks MULTIPLE VALUES of a single variable in a LIST-ORIENTED FORMAT:
+
+  case variable in
+  pattern1 | pattern2) commands1;;
+  pattern3) commands2;;
+  *) default commands;;
+  esac
+
+The  case  cmd COMPARES THE VARIABLE SPECIFIED AGAINST THE DIFFERENT PATTERNS.
+
+IF the var matches the pattern, the shell exec. the cmds specified for the pattern.
+
+You can list more than pattern on a line, using the | operator to separate each pattern.
+
+The (  *  ) symbol is the CATCH-ALL for valeus that don't match ANY of the listed patterns. 
+
