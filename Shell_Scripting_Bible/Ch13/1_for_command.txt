@@ -1,0 +1,25 @@
+ITERATING through a series of commands is a common prog. practice
+
+Often, you need to repeat a set of commands UNTIL A SPECIFIC CONDITION has been met, such as processing all the files in a directory, all the users on a system, or all the lines of a text file
+
+Bash provides the  for  cmd to allow you to CREATE A LOOP that ITERATES THROUGH A SERIES OF VALUES. 
+Each iteration performs a defined set of commands using one of the values in the series
+
+The basic format of bash shell  for  cmd is:
+
+  for var in list
+  do
+      command(s)
+  done
+
+You supply the SERIES OF VALUES used in the iterations in the LIST PARAMETERS. You can specify the values in the list in several ways.
+
+In each iteration, the variable VAR contains the CURRENT VALUE in the list
+
+The 1st iteration uses the 1st item in the list...
+The 2nd iteration uses the 2nd item ...
+
+The command(s) entered btw DO && DONE statements can be one or more STANDARD BASH SHELL COMMANDS.
+w/in the cmd, the $var variable contains the CURRENT LIST ITEM VALUE for the iteration 
+
+NOTE: in you prefer, you can include the DO statement on the same line as the FOR statement, BUT, you must separate it from the list items using a semicolon ===>  for var in list; do 
