@@ -6,6 +6,8 @@ sleep 3
 
 file="states"
 
+IFS=$'\n'
+
 for state in $(cat $file)
 do
   echo "Visit the beautiful $state"
@@ -18,3 +20,5 @@ echo "NOTE: This example uses the  cat  cmd in the COMMAND SUBSTITUTION to displ
 echo "NOTICE the states files includes each state ON A SEPERATE LINE, NOT SEPERATED BY SPACES"
 echo "The  for  cmd still iterates through the output of the  cat  cmd ONE LINE AT A TIME, assuming that each state is on a seperate line."
 echo "HOWEVER, this doesn't solve the problem of having spaces in data. IF you list a state with a space in it, the  for  cmd still takes each word as a seperate value."
+echo
+echo "Notice that after adding the special env. variable IFS, the shell script can use values in the list that CONTAIN SPACES"
