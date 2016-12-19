@@ -5,6 +5,8 @@ sleep 3
 
 file="tsNames"
 
+IFS=$'\n'
+
 for name in $(cat $file)
 do
   echo "How much do you love ${name} JA?"
