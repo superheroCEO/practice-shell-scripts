@@ -1,0 +1,40 @@
+be aware of the special ENVIRONMENT VARIABLE, IFS.
+IFS == Internal Field Separator
+The IFS env. variable defines a list of characters the bash shell uses as FIELD SEPARATORS.
+
+BY DEFAULT, the bash shell considers the following characters as field separators:
+    - a space
+    - a tab
+    - a newline
+
+IF the bash shell sees any of these characters in the data, it ASSUMES that you're starting a new data field in the list
+
+When working with data that can contain spaces, this can be real fucking annoying.
+
+TO SOLVE THIS PROBLEM: you can TEMPORARILY change the IFS env. variable valeus in your shell script to RESTRICT the characters the bash shell recognizes as FIELD SEPARATORS. 
+
+For ex, if you want to change the IFS value to RECOGNIZE ONLY the newline character, you need to do this:
+
+  IFS=$'\n'
+
+Adding this statement to your script tells the bash shelll to IGNORE SPACES && TABS in data values. Apply this IFS technique to the previous script from section 1.4 and see what the script yields now...
+
+---CAUTION---
+When working with long scripts, it's possible to change the IFS value in one place & then forget about it and assumed the default value elsewhere in the script. A SAFE PRACTICE to get into is to save the ORIGINAL IFS VALUE before changing it and then restoring it when you're finished. This technique can be coded like this:
+  
+    IFS.OLD=$IFS
+    IFS=$'\n'
+    <use the new IFS value in the code>
+    IFS=$IFS.OLD
+
+This ensures taht the IFS value is returend to the default value for future operations w/i the script.
+
+Other applications of the IFS env variable are possible. Say you want to iterate through values in a file that are separated by a COLON (ahem.../etc/passwd)...here, you just need to set the IFS value to a colon like this:
+
+    IFS=:
+
+If you want to specify more than one IFS CHARACTER, just STRING THEM TOGETHER on the assignment line like this:
+
+    IFS=$'\n':;"
+
+The assignment here uses the newline, colon, semicolon & double quotation mark characters as Field Separators. There's no limit to how you can parse your data using the IFS characters
