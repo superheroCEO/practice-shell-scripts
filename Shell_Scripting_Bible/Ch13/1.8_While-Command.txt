@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo "While command is A CROSS btw the   if-then   statement & the   for   loop.   The while command allows you to DEFINE A COMMAND TO TEST and then LOOP THROUGH a set of commands for as long as the defined test command returns a ZERO EXIT STATUS."
+echo "It tests the  TEST COMMAND at teh start of each iteration; when the test command returns a NON-ZERO EXIT STATUS, the WHILE COMMAND stops executing the set of commands."
+echo
+echo "Here's the format of the while command: "
+echo "while test command"
+echo "do"
+echo " other command"
+echo "done"
+
+echo " NOTE: The TEST COMMAND defined in the WHILE COMMAND si the EXACT SAME FORMAT AS IN if-then statements."
+echo " Meaning, you can use any normal bash shell command or you can use the TEST command to test for conditions, such as variable values."
+
+echo "The key to the WHILE command is that the exit status of the TEST COMMAND specified MUST CHANGE...based on the commands run during the loop. IF the exit status never changes, the WHILE loop will get stuck in an infinite loop!"
