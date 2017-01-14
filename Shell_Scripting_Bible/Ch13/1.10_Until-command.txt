@@ -1,0 +1,19 @@
+The UNTIL command works exactly THE OPPOSITE WAY from the while command. The until command rq that you specify a test command that normally prodces a NON-ZERO EXIT STATUS. 
+
+As long as the exit status of the test command is NON-ZERO, the bash shell executes the commands listed in the loop. 
+
+WHEN the test command returns a 0 exit status, the LOOP STOPS.
+
+THE UNTIL COMMAND FORMAT:
+
+until test command(s)
+do
+  other commands
+done
+
+
+
+Similar to the while command, you can have more than one test command in the until command statement. 
+
+ONLY the EXIT STATUS of the LAST command determines if the bash shell executes the OTHER COMMANDS defined.
+
